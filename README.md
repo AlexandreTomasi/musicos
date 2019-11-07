@@ -55,24 +55,33 @@ Caso queira consultar artista por tamanho do nome do artista.
    </soapenv:Body>
 </soapenv:Envelope>
 
-Api publicas como consultar.
-Ao pesquisar essa URL "http://localhost:8080/artistas/search"
-Vai aparecer as api publicas disponiveis criadas.
+Api publicas como consultar. 
+Utilize o SOAPUI para testar as api
+No SOAPUI clique em File -> new rest project -> coloque a url desejada e clique em OK.
+Selecione o Method que deseja (GET, POST, PUT, DELETE).
+Ao pesquisar essa URL "http://localhost:8080/artistas/search" no navegador vai aparecer as api publicas disponiveis criadas.
 "http://localhost:8080/artistas/search/findByNomeOrderByNomeAsc{?name}"
 "http://localhost:8080/artistas/search/findByNomeOrderByNomeDesc{?name}"
 "http://localhost:8080/artistas/search/deleteById{?id}"
 "http://localhost:8080/artistas/search/findById{?id}"
-Quando usado o "@RepositoryRestResource" na classe CustomerRepository a ferramenta ja cria um CRUD para ser usado (GET, POST, PUT, DELETE);
+Foi usado o "@RepositoryRestResource" na classe CustomerRepository a ferramenta ja cria um CRUD para ser usado (GET, POST, PUT, DELETE);
 POST (inserir)
 http://localhost:8080/artistas/
-Corpo em json { "id":??, "nome":"???" }
+Eo Corpo em json { "id":??, "nome":"???" }
 
 GET (consultar) lista todos
 http://localhost:8080/artistas/
 
 GET (consultar) por ID
 http://localhost:8080/artistas/search/findById?id=?
+ou http://localhost:8080/artistas/?
 
+DELETE
+http://localhost:8080/artistas/??
+
+Atualizar
+http://localhost:8080/artistas/??
+E o corpo json { "nome":"????" }
 
 
 
