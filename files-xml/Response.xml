@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCustomerDetailResponse 
+	xmlns="http://EmpresaAlexandre.com.br"
+	xsi:schemaLocation="http://EmpresaAlexandre.com.br customer-information.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CustomerDetail>
+		<id>123</id>
+		<name>bob</name>
+	</CustomerDetail>
+</GetCustomerDetailResponse>

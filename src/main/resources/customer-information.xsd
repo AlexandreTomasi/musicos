@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://EmpresaAlexandre.com.br"
+	xmlns:tns="http://EmpresaAlexandre.com.br"
+	elementFormDefault="qualified">
+
+     <xs:simpleType name="Status">
+     	 <xs:restriction base="xs:string">
+     	 		<xs:enumeration value="SUCCESS"/>
+     	 		<xs:enumeration value="FAILURE"/>
+     	 </xs:restriction>
+     </xs:simpleType>
+	
+	<xs:element name="ConsultaArtistaNomeRequest">
+     	<xs:complexType>
+     		<xs:sequence>
+     			<xs:element name="nomeArtista" type="xs:string"/>
+				<xs:element name="ordem" type="xs:string"/>
+     		</xs:sequence>
+     	</xs:complexType>
+     </xs:element>
+     
+     <xs:element name="ConsultaArtistaNomeResponse">
+     	<xs:complexType>
+     		<xs:sequence>
+     			<xs:element name="ArtistasEncontrados" type="tns:ArtistasEncontrados" maxOccurs="unbounded"/>
+     		</xs:sequence>
+     	</xs:complexType>
+     </xs:element>
+     
+     <xs:element name="ConsultaArtistaTamanhoRequest">
+     	<xs:complexType>
+     		<xs:sequence>
+     			<xs:element name="tamanhoNome" type="xs:int"/>
+				<xs:element name="ordem" type="xs:string"/>
+     		</xs:sequence>
+     	</xs:complexType>
+     </xs:element>
+     
+     <xs:element name="ConsultaArtistaTamanhoResponse">
+     	<xs:complexType>
+     		<xs:sequence>
+     			<xs:element name="ArtistasEncontrados" type="tns:ArtistasEncontrados" maxOccurs="unbounded"/>
+     		</xs:sequence>
+     	</xs:complexType>
+     </xs:element>
+     
+     <xs:complexType name="ArtistasEncontrados">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int"/>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="ListaDeAlbuns" type="tns:ListaDeAlbuns" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ListaDeAlbuns">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int"/>
+			<xs:element name="nome_Albun" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

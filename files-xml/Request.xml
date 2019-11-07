@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCustomerDetailRequest 
+	xmlns="http://EmpresaAlexandre.com.br"
+	xsi:schemaLocation="http://EmpresaAlexandre.com.br customer-information.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<nomeArtista>Serj tankian</nomeArtista>
+	<ordem>asc</ordem>
+	<tamanhoNome>10</tamanhoNome>
+</GetCustomerDetailRequest>
