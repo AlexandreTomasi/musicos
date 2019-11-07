@@ -10,7 +10,7 @@ import com.empresaalexandre.soap.webservice.customersadministration.model.Artist
 
 
 @RepositoryRestResource(collectionResourceRel = "artista", path = "artistas")
-public interface CustomerRepository extends PagingAndSortingRepository<Artista, Long> {
+public interface CustomerRepository extends PagingAndSortingRepository<Artista, Integer> {
 
     /**
      * Método que retorna uma lista de artistas fazendo a busca pelo nome passado 
@@ -32,6 +32,4 @@ public interface CustomerRepository extends PagingAndSortingRepository<Artista, 
     
     List<Artista> findAll(Sort sort);
     void save(@Param("name") String name);
-    
-    
 }
