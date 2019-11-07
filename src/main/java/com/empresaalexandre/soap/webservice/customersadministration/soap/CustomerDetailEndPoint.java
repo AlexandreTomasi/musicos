@@ -8,6 +8,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import com.empresaalexandre.soap.webservice.customersadministration.model.Artista;
+import com.empresaalexandre.soap.webservice.customersadministration.exception.CustomerNotFoundException;
 import com.empresaalexandre.soap.webservice.customersadministration.model.Albuns;
 import com.empresaalexandre.soap.webservice.customersadministration.service.CustomerDetailService;
 import br.com.empresaalexandre.ArtistasEncontrados;
@@ -28,6 +29,9 @@ public class CustomerDetailEndPoint {
 	public ConsultaArtistaNomeResponse consultaArtistaNomeRequest(@RequestPayload ConsultaArtistaNomeRequest req) {
 		ConsultaArtistaNomeResponse resp = new ConsultaArtistaNomeResponse();
 		List<Artista> resposta = (service.findArtistaNome(req.getNomeArtista(), req.getOrdem()));
+		if(resposta == null || resposta.size() == 0) {
+			throw new CustomerNotFoundException("Nao foi encontrado nenhum artista com o nome "+req.getNomeArtista()+".");
+		}
 		return convertToConsultaArtistaNomeResponse(resposta);
 	}
 	
@@ -58,6 +62,9 @@ public class CustomerDetailEndPoint {
 	public ConsultaArtistaTamanhoResponse consultaArtistaTamanhoRequest(@RequestPayload ConsultaArtistaTamanhoRequest req) {
 		ConsultaArtistaTamanhoResponse resp = new ConsultaArtistaTamanhoResponse();
 		List<Artista> resposta = (service.findArtistaTamanho(req.getTamanhoNome(), req.getOrdem()));
+		if(resposta == null || resposta.size() == 0) {
+			throw new CustomerNotFoundException("Nao foi encontrado nenhum artista com do tamanho de "+req.getTamanhoNome()+" caracteres");
+		}
 		return convertToConsultaArtistaTamanhoResponse(resposta);
 	}
 	
