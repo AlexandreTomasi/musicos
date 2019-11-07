@@ -14,6 +14,6 @@ public class CustomersAdministrationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CustomersAdministrationApplication.class, args);
-		//http://localhost:8080/ws
+		//http://localhost:8080/ws/musicos.wsdl
 	}
 }
