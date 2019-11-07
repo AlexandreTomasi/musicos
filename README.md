@@ -39,3 +39,14 @@ Caso queira consultar artista por tamanho do nome do artista.
       </emp:ConsultaArtistaTamanhoRequest>
    </soapenv:Body>
 </soapenv:Envelope>
+
+Api publicas como consultar.
+Ao pesquisar essa URL "http://localhost:8080/artistas/search"
+Vai aparecer as api publicas disponiveis.
+"http://localhost:8080/artistas/search/findByNomeOrderByNomeAsc{?name}"
+"http://localhost:8080/artistas/search/findByNomeOrderByNomeDesc{?name}"
+"http://localhost:8080/artistas/search/deleteById{?id}"
+"http://localhost:8080/artistas/search/findById{?id}"
+
+
+
