@@ -58,6 +58,12 @@
               <artifactId>postgresql</artifactId>
               <version>9.4-1206-jdbc42</version>
         </dependency>
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.9.0</version>
+		</dependency>
 
 		
 	</dependencies>

@@ -48,6 +48,7 @@ public class ConsultaArtistaNomeRequest {
     @XmlElement(required = true)
     protected String ordem;
 
+
     /**
      * Obtém o valor da propriedade nomeArtista.
      * 
